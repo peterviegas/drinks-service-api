@@ -4,3 +4,11 @@ export const getCoffee = (name = 'Latte') => {
 		name,
 	};
 };
+
+export const getWelcome = () => {
+	return 'Welcome to the Drinks API!';
+};
+
+export const getCoffeLover = () => {
+	return 'I like coffee!';
+};

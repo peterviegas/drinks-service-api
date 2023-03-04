@@ -15,16 +15,14 @@ export const getWelcome = async (
 	req: Request,
 	res: Response) =>
 {
-	const coffeeName = req.query.coffeeName;
-	const coffee = coffeeService.getCoffee(coffeeName as string);
-	res.send('Welcome to the Drinks API!');
+	const coffee = coffeeService.getWelcome();
+	res.send(coffee);
 };
 
 export const getCoffeLover = async (
 	req: Request,
 	res: Response) =>
 {
-	const coffeeName = req.query.coffeeName;
-	const coffee = coffeeService.getCoffee(coffeeName as string);
-	res.send('Welcome to the Drinks API!');
+	const coffee = coffeeService.getCoffeLover();
+	res.send(coffee);
 };
