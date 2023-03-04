@@ -16,7 +16,7 @@ export const getWelcome = async (
 	res: Response) =>
 {
 	const coffee = coffeeService.getWelcome();
-	res.send(coffee);
+	res.send(coffee).status(200);;
 };
 
 export const getCoffeLover = async (
@@ -24,5 +24,5 @@ export const getCoffeLover = async (
 	res: Response) =>
 {
 	const coffee = coffeeService.getCoffeLover();
-	res.send(coffee);
+	res.send(coffee).status(200);;
 };
