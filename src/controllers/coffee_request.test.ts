@@ -33,7 +33,7 @@ test('GET /coffee with different param should return correctobject', async () =>
 	});
 });
 
-test('GET /coffee with no param should return correct object', async () => {
+test('GET /coffee with with different param should return correct object', async () => {
 	const res = await request(app)
 		.get('/coffee')
 		.query({ coffeeName: 'Cappuccino' });
@@ -44,7 +44,7 @@ test('GET /coffee with no param should return correct object', async () => {
 	});
 });
 
-test('GET /coffee with no param should return correct object', async () => {
+test('GET /coffee with empty param should return correct object', async () => {
 	const res = await request(app)
 		.get('/coffee')
 		.query({ coffeeName: '' });
