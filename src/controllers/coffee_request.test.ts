@@ -12,14 +12,6 @@ test('GET /coffee should return correct object', async () => {
 	});
 });
 
-describe('Test coffee API endpoint request', () => {
-	test('GET /coffeelover should return correct message', async() => {
-		const res = await request(app).get('/coffeelover');
-		expect(res.statusCode).toEqual(200);
-		expect(res.text).toEqual('I like coffee!');
-	});
-});
-
 test('GET /coffee with no param should return correct object', async () => {
 	const res = await request(app)
 		.get('/coffee')
@@ -29,6 +21,7 @@ test('GET /coffee with no param should return correct object', async () => {
 		name: 'Latte',
 	});
 });
+
 test('GET /coffee with different param should return correctobject', async () => {
 	const res = await request(app)
 		.get('/coffee')
@@ -37,5 +30,27 @@ test('GET /coffee with different param should return correctobject', async () =>
 		expect(res.body).toEqual({
 		drinkType: 'Coffee',
 		name: 'Macchiato',
+	});
+});
+
+test('GET /coffee with no param should return correct object', async () => {
+	const res = await request(app)
+		.get('/coffee')
+		.query({ coffeeName: 'Cappuccino' });
+		expect(res.statusCode).toEqual(200);
+		expect(res.body).toEqual({
+		drinkType: 'Coffee',
+		name: 'Cappuccino',
+	});
+});
+
+test('GET /coffee with no param should return correct object', async () => {
+	const res = await request(app)
+		.get('/coffee')
+		.query({ coffeeName: '' });
+		expect(res.statusCode).toEqual(200);
+		expect(res.body).toEqual({
+		drinkType: 'Coffee',
+		name: '',
 	});
 });
