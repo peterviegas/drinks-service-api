@@ -10,3 +10,21 @@ export const getCoffee = async (
 	const coffee = coffeeService.getCoffee(coffeeName as string);
 	res.json(coffee).status(200);
 };
+
+export const getWelcome = async (
+	req: Request,
+	res: Response) =>
+{
+	const coffeeName = req.query.coffeeName;
+	const coffee = coffeeService.getCoffee(coffeeName as string);
+	res.send('Welcome to the Drinks API!');
+};
+
+export const getCoffeLover = async (
+	req: Request,
+	res: Response) =>
+{
+	const coffeeName = req.query.coffeeName;
+	const coffee = coffeeService.getCoffee(coffeeName as string);
+	res.send('Welcome to the Drinks API!');
+};
